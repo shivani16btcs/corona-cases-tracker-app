@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="js/myscript.js"></script>
+
+
+
+<link href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
+
+  </head>
+  <body ng-app="MyApp" ng-controller="MyCtrl">
+    <div class="container">
+      <div class="jumbotron py-3">
+        <h1 class="text-center">{{title}}</h1>
+        <p pt-3>
+          The virus that causes COVID-19 is mainly transmitted through droplets
+          generated when an infected person coughs, sneezes, or exhales. These
+          droplets are too heavy to hang in the air, and quickly fall on floors
+          or surfaces.
+        </p>
+        <!-- <button ng-click="changevalue()">btn</button> -->
+
+        <!-- alldata -->
+        <div class="row text-center">
+          <div class="col-md-4">
+            <div class="card bg-warning">
+              <div class="card body">
+                <h3>confirm cases</h3>
+                <h3>{{alldata.confirmed.value}}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-sucess">
+              <div class="card body">
+                <h3>recovered cases</h3>
+                <h3>{{alldata.recovered.value}}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-danger">
+              <div class="card body">
+                <h3>death cases</h3>
+                <h3>{{alldata.deaths.value}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- end -->
+        <input
+          type="text"
+          class="form-control mt-4"
+          placeholder="enter contry"
+          ng-model="c"
+          ng-change="get_c_data()"
+        />
+        <!-- c data -->
+        <div class="container-fluid" ng-if="c_data">       
+        <h1 class="text-center  text-uppercase">{{c}} status</h1>
+        <div class="row text-center " >
+            <div class="col-md-3">
+              <div class="card bg-warning">
+                <div class="card body">
+                  <h3>country name</h3>
+                  <!-- <h3>{{c_data.confirmed.value}}</h3> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card bg-danger">
+                <div class="card body">
+                  <h3>confirmed cases</h3>
+                  <!-- <h3>{{c_data.deaths.value}}</h3> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card bg-sucess">
+                <div class="card body">
+                  <h3>recovered cases</h3>
+                  <!-- <h3>{{c_data.recovered.value}}</h3> -->
+                </div>
+              </div>
+            </div>
+           
+            <div class="col-md-3">
+              <div class="card bg-danger">
+                <div class="card body">
+                  <h3>death cases</h3>
+                  <!-- <h3>{{c_data.deaths.value}}</h3> -->
+                </div>
+              </div>
+          </div>   
+        </div>
+
+        <!-- <input
+          type="text"
+          class="form-control mt-4"
+          ng-model="cn" 
+          ng-change="detail()"
+          value="{{i.name}}"
+          disabled
+        /> -->
+
+        <div class="row text-center text-lowercase  " >
+        <!-- ng-repeat="i in c_data">  -->
+        
+          <!-- <div class="col-md-3">
+            <div class="card bg-warning">
+              <div class="card body" >
+                <h3 ng-model="cn" ng-change="detail()">{{i.name}}</h3>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="col-md-3">
+            <div class="card bg-sucess">
+              <div class="card body">
+                <h3>{{c_data.confirmed.value}}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card bg-danger">
+              <div class="card body">
+                <h3>{{c_data.recovered.value}}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card bg-danger">
+              <div class="card body">
+                <h3>{{c_data.deaths.value}}</h3>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+
+
+    <table
+    id="table"
+    data-search="true"
+    data-show-columns="true"
+    data-show-multi-sort="true"
+    data-sort-priority='[{"sortName": "github.count.forks","sortOrder":"desc"},{"sortName":"github.count.stargazers","sortOrder":"desc"}]'
+    data-url="json/data3.json">
+    <thead>
+      <tr>
+        <th data-field="github.name" data-sortable="true">Name</th>
+        <th data-field="github.count.stargazers" data-sortable="true">Stargazers</th>
+        <th data-field="github.count.forks" data-sortable="true">Forks</th>
+        <th data-field="github.description" data-sortable="true">Description</th>
+      </tr>
+    </thead>
+  </table>
+  
+  </body>
+</html>
