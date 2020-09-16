@@ -42,154 +42,21 @@
       <div class="jumbotron py-3">
         <h1 class="text-center">{{title}}</h1>
         <p pt-3>
-          The virus that causes COVID-19 is mainly transmitted through droplets
-          generated when an infected person coughs, sneezes, or exhales. These
-          droplets are too heavy to hang in the air, and quickly fall on floors
-          or surfaces.
+          some reviews
         </p>
         <!-- <button ng-click="changevalue()">btn</button> -->
 
         <!-- alldata -->
         <div class="row text-center">
-          <div class="col-md-4">
+          <div class="col-md">
             <div class="card bg-warning">
               <div class="card body">
-                <h3>confirm cases</h3>
-                <h3>{{alldata.confirmed.value}}</h3>
+                <h3>All DATA</h3>
+                <h3>{{alldata}}</h3>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card bg-sucess">
-              <div class="card body">
-                <h3>recovered cases</h3>
-                <h3>{{alldata.recovered.value}}</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card bg-danger">
-              <div class="card body">
-                <h3>death cases</h3>
-                <h3>{{alldata.deaths.value}}</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- end -->
-        <input
-          type="text"
-          class="form-control mt-4"
-          placeholder="enter contry"
-          ng-model="c"
-          ng-change="get_c_data()"
-        />
-        <!-- c data -->
-        <div class="container-fluid" ng-if="c_data">       
-        <h1 class="text-center  text-uppercase">{{c}} status</h1>
-        <div class="row text-center " >
-            <div class="col-md-3">
-              <div class="card bg-warning">
-                <div class="card body">
-                  <h3>country name</h3>
-                  <!-- <h3>{{c_data.confirmed.value}}</h3> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card bg-danger">
-                <div class="card body">
-                  <h3>confirmed cases</h3>
-                  <!-- <h3>{{c_data.deaths.value}}</h3> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card bg-sucess">
-                <div class="card body">
-                  <h3>recovered cases</h3>
-                  <!-- <h3>{{c_data.recovered.value}}</h3> -->
-                </div>
-              </div>
-            </div>
-           
-            <div class="col-md-3">
-              <div class="card bg-danger">
-                <div class="card body">
-                  <h3>death cases</h3>
-                  <!-- <h3>{{c_data.deaths.value}}</h3> -->
-                </div>
-              </div>
-          </div>   
-        </div>
-
-        <!-- <input
-          type="text"
-          class="form-control mt-4"
-          ng-model="cn" 
-          ng-change="detail()"
-          value="{{i.name}}"
-          disabled
-        /> -->
-
-        <div class="row text-center text-lowercase  " >
-        <!-- ng-repeat="i in c_data">  -->
+         
         
-          <!-- <div class="col-md-3">
-            <div class="card bg-warning">
-              <div class="card body" >
-                <h3 ng-model="cn" ng-change="detail()">{{i.name}}</h3>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="col-md-3">
-            <div class="card bg-sucess">
-              <div class="card body">
-                <h3>{{c_data.confirmed.value}}</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="card bg-danger">
-              <div class="card body">
-                <h3>{{c_data.recovered.value}}</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="card bg-danger">
-              <div class="card body">
-                <h3>{{c_data.deaths.value}}</h3>
-              </div>
-            </div>
-        </div>
-      </div>
-
-      </div>
-    </div>
-
-
-
-    <table
-    id="table"
-    data-search="true"
-    data-show-columns="true"
-    data-show-multi-sort="true"
-    data-sort-priority='[{"sortName": "github.count.forks","sortOrder":"desc"},{"sortName":"github.count.stargazers","sortOrder":"desc"}]'
-    data-url="json/data3.json">
-    <thead>
-      <tr>
-        <th data-field="github.name" data-sortable="true">Name</th>
-        <th data-field="github.count.stargazers" data-sortable="true">Stargazers</th>
-        <th data-field="github.count.forks" data-sortable="true">Forks</th>
-        <th data-field="github.description" data-sortable="true">Description</th>
-      </tr>
-    </thead>
-  </table>
-  
   </body>
 </html>
